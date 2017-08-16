@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" routerLink="/">Home</a>
+		</div>
+		<ul class="nav navbar-nav pull-right">
+			<li *ngIf="!auth.loggedIn">
+       <a href="/api/user/login">Login</a>
+      </li>
+			<li *ngIf="auth.loggedIn">
+        <a routerLink="/profile">
+          Profile
+        </a>
+      </li>
+			<li *ngIf="auth.loggedIn">
+        <a class="pointer" (click)="logout()">
+          Logout
+        </a>
+      </li>
+		</ul>
+	</div>
+</nav>
